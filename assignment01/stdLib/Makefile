@@ -4,6 +4,9 @@
 # 3. compile just math.c
 # 4. compile just strings.c
 
+# this is a new sentence from ghw.
+# hello lms!
+
 .PHONY: clean
 clean:
 	find . -name '*.o' -delete
