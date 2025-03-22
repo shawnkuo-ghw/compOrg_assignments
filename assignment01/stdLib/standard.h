@@ -21,10 +21,9 @@ typedef unsigned char boolean;
 // ************* Math ************* //
 
 /*
-    The minimum and maximum values of int type variable
+    The minimum value of int type variable
 */
 #define MIN_VALUE INT_MIN
-#define MAX_VALUE INT_MAX
 
 /*
     Returns the maximum of two values
