@@ -1,13 +1,27 @@
 #include "standard.h"
 #include <stdlib.h>
+  
 
 unsigned int length(const char * string) {
-    //TODO: complete
+    // DONE by lms
+    unsigned int len = 0;
+    while (string[len] != '\0') {
+        len++;
+    }
+    return len;
 }
 
+
 boolean equals(const char * string1, const char * string2) {
-    //TODO: complete
+    // DONE by lms    
+    unsigned int i = 0;
+    while (string1[i] != '\0' && string2[i] != '\0') {  
+            return FALSE;  
+        i++;
+    }
+    return string1[i] == string2[i];  
 }
+
 
 int index_of(const char * string, const char e) {
     int idx = 0;
@@ -21,9 +35,19 @@ int index_of(const char * string, const char e) {
     return found?idx:-1;
 }
 
+
 int last_index_of(const char * string, const char e) {
-    //TODO: complete
+    // DONE by lms
+    int idx = -1;  
+    for (int i = 0; string[i] != '\0'; i++) {  
+        if (string[i] == e) {
+            idx = i;  
+        }
+    }
+    return idx;  
 }
+
+
 
 #define LOWER_CASE_MIN 97
 #define LOWER_CASE_MAX 122
@@ -33,19 +57,53 @@ int last_index_of(const char * string, const char e) {
 
 #define CASE_DIFF 32
 
+
 char * to_lower_case(const char * string) {
-    //TODO: complete
+    // DONE by lms
+    unsigned int len = length(string);
+    char * result = malloc(len + 1);  
+    for (unsigned int i = 0; i < len; i++) {
+        result[i] = shift_in_range(string[i], UPPER_CASE_MIN, UPPER_CASE_MAX, CASE_DIFF);  
+    }
+    result[len] = '\0';  
+    return result;
 }
+
 
 char * to_upper_case(const char * string) {
-    //TODO: complete
+    // DONE by lms
+    unsigned int len = length(string);
+    char * result = malloc(len + 1);  
+    for (unsigned int i = 0; i < len; i++) {
+        result[i] = shift_in_range(string[i], UPPER_CASE_MIN, UPPER_CASE_MAX, -CASE_DIFF);  
+    }
+    result[len] = '\0';  
+    return result;
+}
+  
+
+    
+static char shift_in_range(const char c, unsigned int range_start, unsigned int range_end, const int shift) {
+    // DONE by lms
+    if (c >= range_start && c <= range_end) {  
+        return c + shift;  
+    }
+    return c;  
 }
 
-//TODO create a private function (use the `static` keyword) which will
-//     switch a range of characters by a certain constant value, the profile
-//     will be:
-//     `static char shift_in_range(const char c, unsigned int range_start, unsigned int range_end, const int shift)`
-
+    
+    
 char * substring(const char * string, unsigned int from, unsigned int to) {
-    //TODO: complete
+    // DONE by lms
+    if (from >= to || from >= length(string)) {
+        return NULL;  
+    }
+    unsigned int len = to - from;
+    char * result = malloc(len + 1);  
+    for (unsigned int i = 0; i < len; i++) {
+        result[i] = string[from + i];  
+    }
+    result[len] = '\0';  
+    return result;
 }
+
