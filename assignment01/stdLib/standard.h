@@ -17,7 +17,14 @@ typedef unsigned char boolean;
 */
 #define FALSE 0
 
-// Math
+
+// ************* Math ************* //
+
+/*
+    The minimum and maximum values of int type variable
+*/
+#define MIN_VALUE INT_MIN
+#define MAX_VALUE INT_MAX
 
 /*
     Returns the maximum of two values
@@ -62,7 +69,7 @@ extern boolean is_prime(const unsigned int value);
 */
 extern unsigned int fibonnaci(const unsigned int nth);
 
-// String
+// ************* String ************* //
 
 /*
     Returns the length of a `NULL-Terminated` string
@@ -117,7 +124,7 @@ extern char * to_upper_case(const char * string);
 */
 extern char * substring(const char * string, unsigned int from, unsigned int to);
 
-// Boolean
+// ************* Boolean ************* //
 
 /*
     Returns the logical and between two boolean values
