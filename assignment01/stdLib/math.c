@@ -30,7 +30,7 @@ boolean is_odd(const int value) {
 }
 
 boolean is_prime(const unsigned int value) {
-    //TODO: complete
+    //TODO: done by ghw
 }
 
 unsigned int fibonnaci(const unsigned int nth) {
