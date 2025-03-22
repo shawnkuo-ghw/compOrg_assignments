@@ -30,21 +30,7 @@ boolean is_odd(const int value) {
 }
 
 boolean is_prime(const unsigned int value) {
-    // TODO: done
-    boolean isPrime = FALSE;
-    if ( value == 2 ) {
-        isPrime = TRUE;
-    } else {
-        int factor = 2;
-        while ( !isPrime &&  factor < value ) {
-            if ( value % factor == 0 ) {
-                isPrime = FALSE;
-            } else {
-                factor ++;
-            }
-        }
-    }
-    return isPrime;
+    //TODO: complete
 }
 
 unsigned int fibonnaci(const unsigned int nth) {
