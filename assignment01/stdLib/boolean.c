@@ -63,8 +63,7 @@ boolean eval(struct expression* expr) {
     switch (expr->tag) {
         case LEAF:   return expr->e.value;
         case NOT_OP: return not(eval(expr->e.childs[0]));
-        // TODO: complete with evaluation for AND, OR, and XOR expressions
-        // done by lms
+        //TODO: complete with evaluation for AND, OR, and XOR expressions
     }
 }
 
