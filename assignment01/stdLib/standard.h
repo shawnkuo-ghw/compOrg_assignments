@@ -187,7 +187,13 @@ extern struct expression* AND(struct expression* left, struct expression* right)
 */
 extern struct expression* OR(struct expression* left, struct expression* right);
 
-//TODO: add XOR expression constructor
+// DONE by ghw
+/*
+    Creates an `expression` representing an exclusive or of two other `expression`s.
+    Takes two pointers to `expression`s `left` and `right`
+    Returns a pointer to a new `expression` representing an exclusive or of `left` and `right`
+*/
+extern struct expression* XOR(struct expression* left, struct expression* right);
 
 /*
     Evaluates an `expression` into a `boolean` value
