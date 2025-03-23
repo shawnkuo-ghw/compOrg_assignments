@@ -1,6 +1,8 @@
 #include "standard.h"
 #include <stdlib.h>
   
+static char shift_in_range(const char c, unsigned int range_start, unsigned int range_end, const int shift);
+
 
 unsigned int length(const char * string) {
     // DONE by lms
@@ -90,9 +92,8 @@ static char shift_in_range(const char c, unsigned int range_start, unsigned int 
     }
     return c;  
 }
+   
 
-    
-    
 char * substring(const char * string, unsigned int from, unsigned int to) {
     // DONE by lms
     if (from >= to || from >= length(string)) {
@@ -106,4 +107,3 @@ char * substring(const char * string, unsigned int from, unsigned int to) {
     result[len] = '\0';  
     return result;
 }
-

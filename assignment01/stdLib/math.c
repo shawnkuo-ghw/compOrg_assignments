@@ -14,7 +14,11 @@ int maximum(const int size, int values[size]) {
     if ( size == 0 ) {
         return MIN_VALUE;
     }
-    int max = values[0];
+    int max_value = values[0];
+    for ( int i = 0; i < size; i++ ) {
+        max_value = max(max_value, values[i]);
+    }
+    return max_value;
 }
 
 boolean is_even(const int value) {

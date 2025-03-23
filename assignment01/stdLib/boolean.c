@@ -75,6 +75,7 @@ boolean eval(struct expression* expr) {
         case AND_OP: return and(eval(expr->e.childs[0]), eval(expr->e.childs[1]));
         case OR_OP:  return  or(eval(expr->e.childs[0]), eval(expr->e.childs[1]));
         case XOR_OP: return xor(eval(expr->e.childs[0]), eval(expr->e.childs[1]));
+        default:     return TRUE;
     }
 }
 
