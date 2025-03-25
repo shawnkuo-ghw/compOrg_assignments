@@ -15,13 +15,25 @@ unsigned int length(const char * string) {
 
 
 boolean equals(const char * string1, const char * string2) {
-    // DONE by lms    
-    unsigned int i = 0;
-    while (string1[i] != '\0' && string2[i] != '\0') {  
-            return FALSE;  
-        i++;
+    // DONE by ghw
+    boolean is_equal = TRUE;
+    if ( string1 != string2 ) {
+        unsigned int len1 = length(string1);
+        unsigned int len2 = length(string2);
+        if ( len1 != len2 ) {
+            is_equal = FALSE;
+        } else {
+            unsigned int i = 0;
+            while ( is_equal && i < len1 ) {
+                if ( string1[i] != string2[i] ) {
+                    is_equal = FALSE;
+                } else {
+                    i ++;
+                }
+            }
+        }
     }
-    return string1[i] == string2[i];  
+    return is_equal;
 }
 
 
