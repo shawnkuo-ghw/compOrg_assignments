@@ -17,7 +17,13 @@ typedef unsigned char boolean;
 */
 #define FALSE 0
 
-// Math
+
+// ************* Math ************* //
+
+/*
+    The minimum value of int type variable
+*/
+#define MIN_VALUE INT_MIN
 
 /*
     Returns the maximum of two values
@@ -62,7 +68,7 @@ extern boolean is_prime(const unsigned int value);
 */
 extern unsigned int fibonnaci(const unsigned int nth);
 
-// String
+// ************* String ************* //
 
 /*
     Returns the length of a `NULL-Terminated` string
@@ -117,7 +123,7 @@ extern char * to_upper_case(const char * string);
 */
 extern char * substring(const char * string, unsigned int from, unsigned int to);
 
-// Boolean
+// ************* Boolean ************* //
 
 /*
     Returns the logical and between two boolean values
@@ -180,7 +186,13 @@ extern struct expression* AND(struct expression* left, struct expression* right)
 */
 extern struct expression* OR(struct expression* left, struct expression* right);
 
-//TODO: add XOR expression constructor
+// DONE by ghw
+/*
+    Creates an `expression` representing an exclusive or of two other `expression`s.
+    Takes two pointers to `expression`s `left` and `right`
+    Returns a pointer to a new `expression` representing an exclusive or of `left` and `right`
+*/
+extern struct expression* XOR(struct expression* left, struct expression* right);
 
 /*
     Evaluates an `expression` into a `boolean` value

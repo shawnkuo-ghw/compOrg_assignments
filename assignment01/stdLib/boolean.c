@@ -17,7 +17,7 @@ boolean xor(const boolean a, const boolean b) {
     return a ^ b;
 }
 
-enum {LEAF, NOT_OP, AND_OP, OR_OP};
+enum {LEAF, NOT_OP, AND_OP, OR_OP, XOR_OP};
 
 struct expression {
     int tag;
@@ -59,11 +59,23 @@ struct expression* OR(struct expression* left, struct expression* right) {
     return r;
 }
 
+extern struct expression* XOR(struct expression* left, struct expression* right) {
+    struct expression* r = malloc(sizeof(struct expression));
+    r->tag = XOR_OP;
+    r->e.childs[0] = left;
+    r->e.childs[1] = right;
+    return r;    
+}
+
 boolean eval(struct expression* expr) {
     switch (expr->tag) {
         case LEAF:   return expr->e.value;
         case NOT_OP: return not(eval(expr->e.childs[0]));
-        //TODO: complete with evaluation for AND, OR, and XOR expressions
+        // DONE by ghw
+        case AND_OP: return and(eval(expr->e.childs[0]), eval(expr->e.childs[1]));
+        case OR_OP:  return  or(eval(expr->e.childs[0]), eval(expr->e.childs[1]));
+        case XOR_OP: return xor(eval(expr->e.childs[0]), eval(expr->e.childs[1]));
+        default:     return TRUE;
     }
 }
 
