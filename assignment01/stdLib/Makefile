@@ -16,6 +16,9 @@ boolean.o: boolean.c
 math.o: math.c
 	gcc -c math.c -o math.o
 
+strings.o: strings.c
+	gcc -c strings.c -o strings.o
+
 .PHONY: clean
 
 clean:
