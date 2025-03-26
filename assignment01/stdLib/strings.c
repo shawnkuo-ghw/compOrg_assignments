@@ -1,5 +1,6 @@
 #include "standard.h"
 #include <stdlib.h>
+
   
 static char shift_in_range(const char c, unsigned int range_start, unsigned int range_end, const int shift);
 
@@ -12,7 +13,6 @@ unsigned int length(const char * string) {
     }
     return len;
 }
-
 
 boolean equals(const char * string1, const char * string2) {
     // DONE by ghw
@@ -36,7 +36,6 @@ boolean equals(const char * string1, const char * string2) {
     return is_equal;
 }
 
-
 int index_of(const char * string, const char e) {
     // DONE by ghw
     int i = 0;
@@ -52,7 +51,6 @@ int index_of(const char * string, const char e) {
     }
     return idx;
 }
-
 
 int last_index_of(const char * string, const char e) {
     // DONE by ghw
@@ -73,8 +71,6 @@ int last_index_of(const char * string, const char e) {
     return idx;  
 }
 
-
-
 #define LOWER_CASE_MIN 97
 #define LOWER_CASE_MAX 122
 
@@ -82,7 +78,6 @@ int last_index_of(const char * string, const char e) {
 #define UPPER_CASE_MAX 90
 
 #define CASE_DIFF 32
-
 
 char * to_lower_case(const char * string) {
     // DONE by ghw
@@ -97,7 +92,6 @@ char * to_lower_case(const char * string) {
     }
     return new_str;
 }
-
 
 char * to_upper_case(const char * string) {
     // DONE by ghw
