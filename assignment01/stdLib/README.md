@@ -19,5 +19,5 @@
 - To compile just `strings.c`, run  the following:
 
     ```bash
-    $ make string.o
+    $ make strings.o
 
